@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:manassa/Presentation/Screens/screenlayout.dart';
+
+import 'on-boarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const ScreenLayout(),
+          builder: (context) =>  const OnboardingScreen(),
         ),
       );
     });
