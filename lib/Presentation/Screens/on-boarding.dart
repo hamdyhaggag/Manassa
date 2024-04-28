@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manassa/Presentation/Screens/sign-in.dart';
+import 'package:manassa/Presentation/Screens/SignUp%20and%20Login/log-in.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -39,12 +39,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       curve: Curves.ease,
                     );
                   } else {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) =>   SignInScreen( ),
-                      ),
-                    );                  }
+                      MaterialPageRoute(builder: (context) => LogInScreen()),
+                    );
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFC246BE),
@@ -95,15 +94,15 @@ class OnboardingPage extends StatelessWidget {
           const SizedBox(height: 60),
           index == 0
               ? Image.asset(
-            'assets/images/onboarding person 1.png',
-            height: 300,
-            width: 323.19,
-          )
+                  'assets/images/onboarding person 1.png',
+                  height: 300,
+                  width: 323.19,
+                )
               : Image.asset(
-            'assets/images/onboarding person 2.png',
-            height: 300,
-            width: 323.19,
-          ),
+                  'assets/images/onboarding person 2.png',
+                  height: 300,
+                  width: 323.19,
+                ),
           const SizedBox(height: 30),
           Text(
             index == 0

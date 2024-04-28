@@ -76,11 +76,14 @@ class _SplashScreenState extends State<SplashScreen>
                             child: child,
                           );
                         },
-                        child: const Image(
-                          image: AssetImage('assets/images/App Logo.png'),
-                        ),
+                        child: const SizedBox(
+                          width: 200,
+                          height: 280,
+                          child: Image(
+                            image: AssetImage('assets/images/App Logo.png'),
+                          ),
                       ),
-                    ],
+                      )],
                   ),
                 ],
               ),
