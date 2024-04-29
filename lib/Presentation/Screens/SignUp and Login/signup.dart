@@ -2,6 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:manassa/Presentation/Screens/SignUp%20and%20Login/log-in.dart';
 
+import '../../Widgets/custom_appbar.dart';
+import '../../Widgets/custom_buttom.dart';
+import '../../Widgets/custom_text-field.dart';
+import '../../Widgets/navigator.dart';
+
 class SignUpScreen extends StatefulWidget {
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -21,39 +26,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          title: const Text(
-            ' حساب جديد ',
-            style: TextStyle(
-              fontFamily: 'Ffshamel',
-              fontSize: 20,
-              color: Colors.black,
-            ),
-          ),
-          centerTitle: true,
+        appBar: const CustomAppBar(
+          title: ' حساب جديد ',
         ),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildInputField(
+                CustomTextField(
                   hintText: 'الاسم الكامل ',
                   obscureText: false,
                   toggleVisibility: () {},
                 ),
-                _buildInputField(
+                CustomTextField(
                   hintText: 'البريد الإلكتروني',
                   obscureText: false,
                   toggleVisibility: () {},
                 ),
-                _buildInputField(
+                CustomTextField(
                   hintText: 'كلمة المرور',
                   obscureText: !_isPasswordVisible,
                   suffixIcon: _isPasswordVisible
@@ -114,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                _buildElevatedButton(
+                CustomElevatedButton(
                   text: 'إنشاء حساب جديد',
                   onPressed: () {},
                 ),
@@ -137,11 +128,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               fontWeight: FontWeight.w900),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LogInScreen()),
-                              );
+                              navigateAndFinish(context, LogInScreen());
                             }),
                     ],
                   ),
@@ -150,74 +137,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildInputField({
-    required String hintText,
-    required bool obscureText,
-    IconData? suffixIcon,
-    required VoidCallback toggleVisibility,
-  }) {
-    return Theme(
-      data: ThemeData(
-        textSelectionTheme: TextSelectionThemeData(
-          selectionColor: Colors.grey.shade400,
-        ),
-      ),
-      child: Container(
-        width: 327,
-        height: 56,
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(vertical: 8),
-        decoration: BoxDecoration(
-          color: Colors.grey.shade100,
-          border: Border.all(color: Colors.grey),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: TextField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            hintText: hintText,
-            border: InputBorder.none,
-            hintStyle: const TextStyle(
-                fontFamily: 'GESS',
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.normal),
-            suffixIcon: suffixIcon != null
-                ? IconButton(
-                    icon: Icon(suffixIcon, color: Colors.grey.shade400),
-                    onPressed: toggleVisibility,
-                  )
-                : null,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildElevatedButton({
-    required String text,
-    required VoidCallback onPressed,
-  }) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFFC246BE),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        fixedSize: const Size(327, 56),
-      ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontFamily: 'Ffshamel',
-          fontSize: 18,
-          color: Colors.white,
         ),
       ),
     );

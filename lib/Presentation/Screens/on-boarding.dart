@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:manassa/Presentation/Screens/SignUp%20and%20Login/log-in.dart';
 
+import '../Widgets/navigator.dart';
+
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
 
@@ -39,10 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       curve: Curves.ease,
                     );
                   } else {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LogInScreen()),
-                    );
+                    navigateAndFinish(context, LogInScreen());
                   }
                 },
                 style: ElevatedButton.styleFrom(

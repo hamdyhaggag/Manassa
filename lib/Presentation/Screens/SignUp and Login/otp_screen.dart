@@ -1,6 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:manassa/Presentation/Screens/SignUp%20and%20Login/new_password.dart';
+
+import '../../Widgets/custom_appbar.dart';
+import '../../Widgets/custom_buttom.dart';
+import '../../Widgets/navigator.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -18,23 +22,7 @@ class _OtpScreenState extends State<OtpScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          title: const Text(
-            ' التحقق من الرمز   ',
-            style: TextStyle(
-              fontFamily: 'Ffshamel',
-              fontSize: 20,
-              color: Colors.black,
-            ),
-          ),
-          centerTitle: true,
-        ),
+        appBar: const CustomAppBar(title: ' التحقق من الرمز '),
         body: Column(
           children: [
             const Padding(
@@ -96,9 +84,11 @@ class _OtpScreenState extends State<OtpScreen> {
             const SizedBox(
               height: 25,
             ),
-            _buildElevatedButton(
+            CustomElevatedButton(
               text: 'تحقق من الرمز',
-              onPressed: () {},
+              onPressed: () {
+                navigateAndFinish(context, const NewPasswordScreen());
+              },
             ),
             const SizedBox(
               height: 20,
@@ -117,28 +107,4 @@ class _OtpScreenState extends State<OtpScreen> {
       ),
     );
   }
-}
-
-Widget _buildElevatedButton({
-  required String text,
-  required VoidCallback onPressed,
-}) {
-  return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFFC246BE),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      fixedSize: const Size(327, 56),
-    ),
-    child: Text(
-      text,
-      style: const TextStyle(
-        fontFamily: 'Ffshamel',
-        fontSize: 18,
-        color: Colors.white,
-      ),
-    ),
-  );
 }

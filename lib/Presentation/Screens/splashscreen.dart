@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _animationController = AnimationController(
-      vsync:this ,
+      vsync: this,
       duration: const Duration(seconds: 2),
     );
 
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>  const OnboardingScreen(),
+          builder: (context) => const OnboardingScreen(),
         ),
       );
     });
@@ -63,27 +63,29 @@ class _SplashScreenState extends State<SplashScreen>
             ),
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Stack(
-                    alignment: Alignment.bottomCenter,
                     children: [
                       AnimatedBuilder(
                         animation: _animation,
                         builder: (context, child) {
-                          return Opacity(
-                            opacity: _animation.value,
-                            child: child,
+                          return Transform.translate(
+                            offset: Offset(0, _animation.value * 330),
+                            child: Opacity(
+                              opacity: _animation.value,
+                              child: child,
+                            ),
                           );
                         },
                         child: const SizedBox(
                           width: 200,
-                          height: 280,
+                          height: 200,
                           child: Image(
                             image: AssetImage('assets/images/App Logo.png'),
                           ),
+                        ),
                       ),
-                      )],
+                    ],
                   ),
                 ],
               ),
