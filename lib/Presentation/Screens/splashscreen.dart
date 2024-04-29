@@ -52,8 +52,6 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final screenSize = constraints.biggest;
-
           return Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:manassa/Presentation/Widgets/navigator.dart';
 import '../../Widgets/custom_appbar.dart';
 import '../../Widgets/custom_buttom.dart';
+import '../home.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key});
@@ -64,7 +66,9 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 const SizedBox(height: 10),
                 CustomElevatedButton(
                   text: 'إنشاء كلمة مرور جديدة',
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateAndFinish(context, const HomeScreen());
+                  },
                 ),
               ],
             ),
