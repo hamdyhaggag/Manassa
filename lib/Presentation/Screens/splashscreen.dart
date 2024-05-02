@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'on-boarding.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -49,6 +50,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: const Size(375, 812));
+
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -68,17 +71,17 @@ class _SplashScreenState extends State<SplashScreen>
                         animation: _animation,
                         builder: (context, child) {
                           return Transform.translate(
-                            offset: Offset(0, _animation.value * 330),
+                            offset: Offset(0, _animation.value * 290.h),
                             child: Opacity(
                               opacity: _animation.value,
                               child: child,
                             ),
                           );
                         },
-                        child: const SizedBox(
-                          width: 200,
-                          height: 200,
-                          child: Image(
+                        child: SizedBox(
+                          width: 200.w,
+                          height: 200.h,
+                          child: const Image(
                             image: AssetImage('assets/images/App Logo.png'),
                           ),
                         ),

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:manassa/Presentation/Screens/SignUp%20and%20Login/forget_password.dart';
@@ -15,6 +16,10 @@ class LogInScreen extends StatefulWidget {
 
 class _LogInScreenState extends State<LogInScreen> {
   bool _isPasswordVisible = false;
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   void _togglePasswordVisibility() {
     setState(() {
       _isPasswordVisible = !_isPasswordVisible;
@@ -39,6 +44,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   hintText: 'البريد الإلكتروني',
                   obscureText: false,
                   toggleVisibility: () {},
+                  controller: emailController,
                 ),
                 CustomTextField(
                   hintText: 'كلمة المرور',
@@ -47,6 +53,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       ? Icons.visibility
                       : Icons.visibility_off,
                   toggleVisibility: _togglePasswordVisibility,
+                  controller: passwordController,
                 ),
                 GestureDetector(
                   onTap: () {

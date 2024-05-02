@@ -5,12 +5,14 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final IconData? suffixIcon;
   final VoidCallback toggleVisibility;
+  final TextEditingController controller; // Added controller for text input
 
   const CustomTextField({
     required this.hintText,
     required this.obscureText,
     this.suffixIcon,
     required this.toggleVisibility,
+    required this.controller,
   });
 
   @override
@@ -32,6 +34,7 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: TextField(
+          controller: controller,
           obscureText: obscureText,
           decoration: InputDecoration(
             hintText: hintText,

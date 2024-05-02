@@ -15,6 +15,11 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _isPasswordVisible = false;
   bool _isCheckboxChecked = false;
+
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   void _togglePasswordVisibility() {
     setState(() {
       _isPasswordVisible = !_isPasswordVisible;
@@ -38,11 +43,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'الاسم الكامل ',
                   obscureText: false,
                   toggleVisibility: () {},
+                  controller: fullNameController,
                 ),
                 CustomTextField(
                   hintText: 'البريد الإلكتروني',
                   obscureText: false,
                   toggleVisibility: () {},
+                  controller: emailController,
                 ),
                 CustomTextField(
                   hintText: 'كلمة المرور',
@@ -51,6 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ? Icons.visibility
                       : Icons.visibility_off,
                   toggleVisibility: _togglePasswordVisibility,
+                  controller: passwordController,
                 ),
                 Padding(
                   padding:

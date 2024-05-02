@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "573744469754",
+    "firebase_url": "https://manassa-cb59f-default-rtdb.firebaseio.com",
+    "project_id": "manassa-cb59f",
+    "storage_bucket": "manassa-cb59f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573744469754:android:566db1a6bf7f8bf3c61b43",
+        "android_client_info": {
+          "package_name": "com.manassa.manassa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiJEn4WrneG-zC3a2BvNiumwwYQQG8-5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

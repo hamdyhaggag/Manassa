@@ -5,9 +5,15 @@ import '../../Widgets/custom_buttom.dart';
 import '../../Widgets/custom_text-field.dart';
 import '../../Widgets/navigator.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
+class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
 
+  @override
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
+}
+
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -52,6 +58,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   hintText: 'رقم الهاتف',
                   obscureText: false,
                   toggleVisibility: () {},
+                  controller: phoneController,
                 ),
                 const SizedBox(
                   height: 10,
