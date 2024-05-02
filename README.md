@@ -6,20 +6,28 @@ Manassa is an E-Learning mobile application developed using Flutter, designed to
 
 Screenshots
 
-![Splash Screen](assets/ScreenShots/1.SplashScreen.png)
 *Splash Screen*
 
-![Onboarding - 1](assets/ScreenShots/2.%20Onboarding%20-%201.png)
+<img width="375" alt="Splash Screen" src="https://github.com/hamdyhaggag/Manassa/blob/firstbranch/assets/ScreenShots/1.%20Splash%20Screen.png">
+
 *Onboarding Screen*
 
-![Onboarding - 2](assets/ScreenShots/2.%20Onboarding%20-%202.png)
+<img width="375" alt="Onboarding Screen" src="https://github.com/hamdyhaggag/Manassa/blob/firstbranch/assets/ScreenShots/2.%20Onboarding%20-%202.png">
+
 *Onboarding Screen*
 
-![Login](assets/ScreenShots/4.%20Login.png)
+<img width="375" alt="Onboarding Screen" src="https://github.com/hamdyhaggag/Manassa/blob/firstbranch/assets/ScreenShots/3.%20Onboarding%20-%203.png">
+
 *Login Screen*
 
-![Sign Up](assets/ScreenShots/5.%20Sign%20Up.png)
+<img width="375" alt="Login Screen" src="https://github.com/hamdyhaggag/Manassa/blob/firstbranch/assets/ScreenShots/4.%20Login.png">
+
 *Sign Up Screen*
+
+<img width="375" alt="Sign Up Screen" src="https://github.com/hamdyhaggag/Manassa/blob/firstbranch/assets/ScreenShots/5.%20Sign%20Up.png">
+
+
+
 
 Features
 
